@@ -7,18 +7,18 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from TECNO-CG7 device
-$(call inherit-product, device/tecno/TECNO-CG7/device.mk)
+# Inherit from CG7 device
+$(call inherit-product, device/tecno/CG7/device.mk)
 
-PRODUCT_DEVICE := TECNO-CG7
-PRODUCT_NAME := omni_TECNO-CG7
+PRODUCT_DEVICE := CG7
+PRODUCT_NAME := twrp_CG7
 PRODUCT_BRAND := TECNO
-PRODUCT_MODEL := TECNO CG7
+PRODUCT_MODEL := TECNO cammon 17p
 PRODUCT_MANUFACTURER := tecno
 
 PRODUCT_GMS_CLIENTID_BASE := android-tecno
